@@ -1,0 +1,20 @@
+<h3>Featured Movies</h3>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Genre</th>
+            <th>Rating</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let movie of movies">
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.genre }}</td>
+            <td>{{ movie.rating }}</td>
+            <td>{{ movie.description }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+<h3>Welcome to Cinema JS </h3>
+<h6>Your number one cinema in the country</h6>
+
+<table class="table table-hover" >
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Genre</th>
+            <th>Rating</th>
+            <th>Location</th>
+            <th>Time</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let show of shows">
+            <td>{{ show.title }}</td>
+            <td>{{ show.genre }}</td>
+            <td>{{ show.rating }}</td>
+            <td>{{ show.location }}</td>
+            <td>{{ show.time | date:"long" }}</td>
+            <td>{{ show.description }}</td>
+        </tr>
+    </tbody>
+</table>

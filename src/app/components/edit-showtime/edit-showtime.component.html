@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <form (ngSubmit)="onSubmit()">
+        <input 
+        type="hidden" 
+        name="showtime_ID" 
+        value="showtime_ID"
+        [(ngModel)]="showtime_ID"
+        />
+        <div class="form-group">
+            <label>Movie</label>
+            <br>
+            <select [(ngModel)]="movie" name="movie" id="movie">
+                <!-- <option value="{{movie_ID}}" selected>{{ movie }}</option> -->
+
+                <option  
+                    *ngFor="let mv of movies" 
+                    value="{{mv.movie_ID}}">
+                    {{ mv.title }}
+                </option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Date</label>
+            <input
+            class="form-control"
+            type="datetime-local"
+            name="time"
+            id="time"
+            [(ngModel)]="time"
+            />
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Location</label>
+            <input 
+            type="text" 
+            name="location" 
+            class="form-control" 
+            placeholder="Enter Location" 
+            value=""
+            [(ngModel)]="location"
+            />
+        </div>
+        <br>
+        <div class="form-group">
+            
+            <input type="submit" name="update" value="Update" class="btn btn-info">
+
+            <!-- <input type="submit" name="submit" value="Save"  class="btn btn-dark"> -->
+        </div>
+        <br>
+    </form>
+
+</div>
+
+
+

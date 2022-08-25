@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-between">
+    <h3>Scheduled Showtimes</h3>
+    <a routerLink="/addshowtime" class="btn btn-success">Add</a>
+</div>
+
+
+<table class="table table-hover" >
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Location</th>
+            <th>Time</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let showtime of showtimes">
+            <td>{{ showtime.title }}</td>
+            <td>{{ showtime.location }}</td>
+            <td>{{ showtime.time | date:"long" }}</td>
+            <td>
+                <button class="btn btn-info" (click)="onEdit(showtime)" >Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-danger"  (click)="onDelete(showtime)">Delete</button>
+
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
